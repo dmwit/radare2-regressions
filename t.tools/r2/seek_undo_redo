@@ -1,0 +1,19 @@
+#!/bin/sh
+# GPL 3+ - Copyright (C) 2014  pancake
+[ -e tests.sh ] && . ./tests.sh || . ../tests.sh
+
+NAME='seek undo/redo'
+BROKEN=
+FILE=-
+ARGS=
+CMDS='e scr.null=1
+wx 1
+s 1
+s-
+s+
+e scr.null=0
+pb 8
+'
+EXPECT='00000000
+'
+run_test
